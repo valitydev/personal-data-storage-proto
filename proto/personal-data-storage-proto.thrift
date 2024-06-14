@@ -1,4 +1,5 @@
 namespace java com.empayre.transfer
+namespace erlang personal_data_storage.personal_data_storage
 
 typedef string PersonalDataToken
 

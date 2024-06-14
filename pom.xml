@@ -10,7 +10,6 @@
         <version>2.0.0</version>
     </parent>
 
-    <groupId>com.empayre</groupId>
     <artifactId>personal-data-storage-proto</artifactId>
     <version>${revision}</version>
     <packaging>jar</packaging>
