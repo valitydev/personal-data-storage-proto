@@ -1,0 +1,8 @@
+{application, validator_personal_data_proto, [
+    {description, "Thrift proto for personal data storage"},
+    {vsn, "0.1.0"},
+    {applications, [
+        kernel,
+        stdlib
+    ]}
+]}.
