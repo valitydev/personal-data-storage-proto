@@ -15,7 +15,7 @@ struct PersonPassport {
     5: required string citizenship
     6: required string birth_place
     7: required string number
-    8: required string residense_address
+    8: required string residence_address
     9: required string issued_by
     10: required string issued_at
     // only for russian domestic passports
