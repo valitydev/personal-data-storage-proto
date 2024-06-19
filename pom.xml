@@ -7,7 +7,7 @@
     <parent>
         <groupId>dev.vality</groupId>
         <artifactId>library-parent-pom</artifactId>
-        <version>2.0.0</version>
+        <version>2.0.2</version>
     </parent>
 
     <artifactId>personal-data-storage-proto</artifactId>
@@ -49,6 +49,12 @@
             <groupId>dev.vality.woody</groupId>
             <artifactId>woody-thrift</artifactId>
             <version>1.0.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>dev.vality</groupId>
+            <artifactId>damsel</artifactId>
+            <version>1.628-a711c8f</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

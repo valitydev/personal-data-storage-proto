@@ -1,3 +1,6 @@
+include "proto/base.thrift"
+include "proto/domain.thrift"
+
 namespace java com.empayre.transfer
 namespace erlang personal_data_storage.personal_data_storage
 
@@ -15,7 +18,7 @@ struct PersonPassport {
     5: required string citizenship
     6: required string birth_place
     7: required string number
-    8: required string residense_address
+    8: required string residence_address
     9: required string issued_by
     10: required string issued_at
     // only for russian domestic passports
@@ -73,7 +76,11 @@ union PersonalData {
     3: GenericPersonalData generic_personal_data
 }
 
+exception PersonalDataNotFound {}
+
 service PersonalDataStorageService {
-    SavePersonalDataResponse SavePersonalData(SavePersonalDataRequest save_personal_data_request)
-    GetPersonalDataResponse GetPersonalData(PersonalDataToken token)
+    SavePersonalDataResponse SavePersonalData(1: SavePersonalDataRequest save_personal_data_request)
+        throws (1: base.InvalidRequest ex)
+    GetPersonalDataResponse GetPersonalData(1: PersonalDataToken token)
+        throws (1: PersonalDataNotFound ex1, 2: base.InvalidRequest ex2)
 }
