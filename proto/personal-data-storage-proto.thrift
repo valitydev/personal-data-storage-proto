@@ -78,8 +78,8 @@ union PersonalData {
 exception PersonalDataNotFound {}
 
 service PersonalDataStorageService {
-    SavePersonalDataResponse SavePersonalData(SavePersonalDataRequest save_personal_data_request)
+    SavePersonalDataResponse SavePersonalData(1: SavePersonalDataRequest save_personal_data_request)
         throws (1: base.InvalidRequest ex)
-    GetPersonalDataResponse GetPersonalData(PersonalDataToken token)
+    GetPersonalDataResponse GetPersonalData(1: PersonalDataToken token)
         throws (1: PersonalDataNotFound ex1, 2: base.InvalidRequest ex2)
 }
