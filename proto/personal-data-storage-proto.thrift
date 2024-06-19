@@ -1,4 +1,5 @@
 include "proto/base.thrift"
+include "proto/domain.thrift"
 
 namespace java com.empayre.transfer
 namespace erlang personal_data_storage.personal_data_storage
