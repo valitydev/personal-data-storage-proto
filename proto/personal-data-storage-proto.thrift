@@ -58,6 +58,45 @@ struct GenericPersonalData {
     2: optional string inn
 }
 
+struct PersonalName {
+   1: required string family_name
+   2: required string given_name
+   3: string middle_name
+}
+
+struct BankCredentials {
+   1: required string login
+   2: required string pasword
+}
+
+struct BankAccountPersonalData {
+   1: required string bank_name
+   2: required string bank_bic
+   3: optional string account_number
+   4: required PersonalName personal_name
+   5: required BankCredentials bank_credentials
+}
+
+struct PhonePersonalData {
+   1: required string bank_name
+   2: required string phone_number
+   3: required PersonalName personal_name
+   4: required BankCredentials bank_credentials
+}
+
+struct BankCardPersonalData {
+   1: required string bank_name
+   2: required string card_token
+   3: required PersonalName personal_name
+   4: required BankCredentials bank_credentials
+}
+
+union P2PReceiverPersonalData {
+   1: BankAccountPersonalData account_personal_data
+   2: PhonePersonalData phone_personal_data
+   3: BankCardPersonalData card_personal_data
+}
+
 struct SavePersonalDataRequest {
     1: required PersonalData personal_data
 }
@@ -74,6 +113,7 @@ union PersonalData {
     1: TransferSenderPersonalData transfer_sender_personal_data
     2: TransferRecieverPersonalData transfer_reciever_personal_data
     3: GenericPersonalData generic_personal_data
+    4: P2PReceiverPersonalData p2p_receiver_personal_data
 }
 
 exception PersonalDataNotFound {}
