@@ -1,6 +1,3 @@
-include "proto/base.thrift"
-include "proto/domain.thrift"
-
 namespace java com.empayre.transfer
 namespace erlang personal_data_storage.personal_data_storage
 
@@ -118,9 +115,11 @@ union PersonalData {
 
 exception PersonalDataNotFound {}
 
+exception InvalidRequest {}
+
 service PersonalDataStorageService {
     SavePersonalDataResponse SavePersonalData(1: SavePersonalDataRequest save_personal_data_request)
-        throws (1: base.InvalidRequest ex)
+        throws (1: InvalidRequest ex)
     GetPersonalDataResponse GetPersonalData(1: PersonalDataToken token)
-        throws (1: PersonalDataNotFound ex1, 2: base.InvalidRequest ex2)
+        throws (1: PersonalDataNotFound ex1, 2: InvalidRequest ex2)
 }
