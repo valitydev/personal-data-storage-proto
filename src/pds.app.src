@@ -1,4 +1,4 @@
-{application, personal_data_storage_proto, [
+{application, pds, [
     {description, "Thrift proto for personal data storage"},
     {vsn, "0.1.0"},
     {applications, [
