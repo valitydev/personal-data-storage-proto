@@ -52,12 +52,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>dev.vality</groupId>
-            <artifactId>damsel</artifactId>
-            <version>1.628-a711c8f</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
             <version>1.3.2</version>
