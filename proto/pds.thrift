@@ -23,15 +23,15 @@ struct PersonPassport {
 }
 
 struct ResidentSenderPersonalData {
-    1: PersonPassport person_passport
-    2: SenderBankAccount sender_bank_account
-    3: string inn
+    1: required PersonPassport person_passport
+    2: required SenderBankAccount sender_bank_account
+    3: required string inn
 }
 
 struct NonResidentSenderPersonalData {
-    1: PersonPassport person_passport
-    2: SenderBankAccount sender_bank_account
-    3: string inn
+    1: required PersonPassport person_passport
+    2: required SenderBankAccount sender_bank_account
+    3: required string inn
     4: optional string migration_card_number
 }
 
@@ -43,7 +43,7 @@ union TransferSenderPersonalData {
 struct TransferRecieverPersonalData {
     1: required string family_name
     2: required string given_name
-    3: string middle_name
+    3: optional string middle_name
     // Date of birth according to format DD.MM.YYYY
     4: required string date_of_birth
     // ISO Alpha-3 country of citizenship
@@ -51,14 +51,14 @@ struct TransferRecieverPersonalData {
 }
 
 struct GenericPersonalData {
-    1: PersonPassport person_passport
+    1: required PersonPassport person_passport
     2: optional string inn
 }
 
 struct PersonalName {
    1: required string family_name
    2: required string given_name
-   3: string middle_name
+   3: optional string middle_name
 }
 
 struct BankCredentials {
