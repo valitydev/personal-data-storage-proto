@@ -63,7 +63,7 @@ struct PersonalName {
 
 struct BankCredentials {
    1: required string login
-   2: required string pasword
+   2: required string password
 }
 
 struct BankAccountPersonalData {
