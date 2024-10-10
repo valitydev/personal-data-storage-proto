@@ -69,7 +69,7 @@ struct BankCredentials {
 struct BankAccountPersonalData {
    1: required string bank_name
    2: required string bank_bic
-   3: optional string account_number
+   3: required string account_number
    4: required PersonalName personal_name
    5: required BankCredentials bank_credentials
 }
