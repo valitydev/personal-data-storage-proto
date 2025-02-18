@@ -2,6 +2,7 @@ namespace java com.empayre.transfer
 namespace erlang personal_data_storage.personal_data_storage
 
 typedef string PersonalDataToken
+typedef string BankCardToken
 
 struct SenderBankAccount {
     1: string account_number
@@ -26,6 +27,7 @@ struct ResidentSenderPersonalData {
     1: required PersonPassport person_passport
     2: required SenderBankAccount sender_bank_account
     3: required string inn
+    4: optional BankCardToken bank_card_token
 }
 
 struct NonResidentSenderPersonalData {
@@ -33,6 +35,7 @@ struct NonResidentSenderPersonalData {
     2: required SenderBankAccount sender_bank_account
     3: required string inn
     4: optional string migration_card_number
+    5: optional BankCardToken bank_card_token
 }
 
 union TransferSenderPersonalData {
@@ -48,6 +51,7 @@ struct TransferRecieverPersonalData {
     4: required string date_of_birth
     // ISO Alpha-3 country of citizenship
     5: required string citizenship
+    6: optional BankCardToken bank_card_token
 }
 
 struct GenericPersonalData {
